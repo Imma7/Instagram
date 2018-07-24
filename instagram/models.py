@@ -14,3 +14,4 @@ class Profile(models.Model):
     profile_photo = models.ImageField()
     bio = models.TextField(max_length=50, blank=True)
     username = models.CharField()
+    user = models.ForeignKey(User, blank=True)
