@@ -31,4 +31,10 @@ class Profile(models.Model):
     user = models.ForeignKey(User, blank=True)
 
     def save_profile(self):
-        return self.save
+        return self.save()
+
+    def update_profile(self):
+        return self.update()
+
+    def delete_profile(self):
+        return self.delete()
