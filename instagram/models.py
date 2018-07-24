@@ -9,6 +9,18 @@ class Image(models.Model):
     likes = models.IntegerField()
     profile = models.ForeignKey(Profile)
 
+    def save_image(self):
+        return self.save()
+
+    def delete_image(self):
+        return self.delete()
+
+    def update_caption(self):
+        return self.update_caption()
+
+    def get_image_by_id(self, id):
+        return self.get_image_by_id(id)
+
 
 class Profile(models.Model):
     profile_photo = models.ImageField()
