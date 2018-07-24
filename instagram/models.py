@@ -16,10 +16,12 @@ class Image(models.Model):
         return self.delete()
 
     def update_caption(self):
-        return self.update_caption()
+        return self.update()
 
-    def get_image_by_id(self, id):
-        return self.get_image_by_id(id)
+    @classmethod
+    def get_image_by_id(search_image, cls):
+        image = cls.objects.filter(name = search_image)
+        return image
 
 
 class Profile(models.Model):
@@ -27,3 +29,6 @@ class Profile(models.Model):
     bio = models.TextField(max_length=50, blank=True)
     username = models.CharField()
     user = models.ForeignKey(User, blank=True)
+
+    def save_profile(self):
+        return self.save
