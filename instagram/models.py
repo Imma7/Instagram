@@ -8,3 +8,9 @@ class Image(models.Model):
     comments = models.TextField(max_length=50, blank=True)
     likes = models.IntegerField()
     profile = models.ForeignKey(Profile)
+
+
+class Profile(models.Model):
+    profile_photo = models.ImageField()
+    bio = models.TextField(max_length=50, blank=True)
+    username = models.CharField()
