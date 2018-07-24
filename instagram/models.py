@@ -20,7 +20,7 @@ class Image(models.Model):
 
     @classmethod
     def get_image_by_id(search_image, cls):
-        image = cls.objects.filter(name = search_image)
+        image = cls.objects.filter(image_name = search_image)
         return image
 
 
@@ -38,3 +38,8 @@ class Profile(models.Model):
 
     def delete_profile(self):
         return self.delete()
+
+    @classmethod
+    def find_profile(search_profile, cls):
+        profile = cls.objects.filter(username = search_profile)
+        return profile
