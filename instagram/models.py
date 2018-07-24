@@ -7,4 +7,4 @@ class Image(models.Model):
     image_caption = models.CharField(max_length = 30, blank = True)
     comments = models.TextField(max_length=50, blank=True)
     likes = models.IntegerField()
-    
+    profile = models.ForeignKey(Profile)
