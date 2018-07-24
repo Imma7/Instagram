@@ -6,7 +6,7 @@ class Profile(models.Model):
     profile_photo = models.ImageField(upload_to = 'profile/')
     bio = models.TextField(max_length=50, blank=True)
     username = models.CharField(max_length=30)
-    user = models.ForeignKey(User, blank=True)
+    user = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
 
     def save_profile(self):
         return self.save()
@@ -29,7 +29,8 @@ class Image(models.Model):
     image_caption = models.CharField(max_length = 30, blank = True)
     comments = models.TextField(max_length=50, blank=True)
     likes = models.IntegerField()
-    profile = models.ForeignKey(Profile)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    pub_date = models.DateTimeField(auto_now_add=True, null=True)
 
     def save_image(self):
         return self.save()
