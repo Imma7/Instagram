@@ -1,0 +1,32 @@
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    {% if title %}
+        <title>iNSTAGRAM {{title}}</title>
+    {% else %}
+        <title> iNSTAGRAM </title>
+    {% endif %}
+
+    {% block styles %}
+    {% bootstrap_css %}
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/snap.css" %}">
+    {% endblock %}
+</head>
+<body>
+
+    {% include "navbar.html" %}
+
+    {% block content %} 
+    {%endblock%}
+
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>
