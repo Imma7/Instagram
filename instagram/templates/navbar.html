@@ -8,9 +8,93 @@
 <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{% url 'newsToday' %}">The Moringa Tribune</a>
+    <div class="navbar-header" style="padding-top: 8px;">
+      <img src="media/icons/ig_logo.png" href="#" alt="Icon" class="img-thumbnail" width="30" height="30" >
+      <span class="glyphicon glyphicon-text-background"></span>
     </div>
+
+    <div class="dropdown" style="padding-top: 8px; float:right;">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Location
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="/location/Nairobi">Nairobi</a></li>
+        <li><a href="/location/Nakuru">Nakuru</a></li>
+        <li><a href="/location/Kisumu">Kisumu</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown" style="padding-top: 8px; padding-right:10px; float:right;">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="/category/Travel">Travel</a></li>
+        <li><a href="/category/Wildlife">Wildlife</a></li>
+        <li><a href="/category/Photography">Photography</a></li>
+      </ul>
+    </div>
+
+    <div class="container-fluid" style="padding-top: 8px; padding-right:10px; position:inherit;">
+      <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    </div>
+
+
+    <div class="col-sm-6 col-md-6">
+      {% if user.is_authenticated %}
+      <ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                    <span class="caret"></span>
+                </a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="{%url 'index' %}">Home</a>
+            </li>
+            <li>
+              <a href="/accounts/password/change">Change Password</a>
+            </li>
+            <li>
+              <a href="/logout">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      {% else %}
+      <li>
+        <a class='btn btn-default' href="/accounts/login">Login</a>
+      </li>
+
+      {% endif %}
+    </div>
+
+    <div class="dropdown" style="padding-top: 8px; padding-right:10px; float:right;">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="{%url 'index'%}">Home</a>
+            </li>
+            <li>
+              <a href="{%url 'new-post'%}">Create Post</a>
+            </li>
+            <li>
+              <a href="/accounts/password/change">Change Password</a>
+            </li>
+            <li>
+              <a href="/logout">Logout</a>
+            </li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </nav>
 </body>
