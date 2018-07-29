@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'instagram',
     'bootstrap3',
     'tinymce',
+    'django_filters',
+    'friendship',
 ]
 
 MIDDLEWARE = [
