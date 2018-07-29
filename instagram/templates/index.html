@@ -1,22 +1,34 @@
 {% extends 'base.html' %}
 {% load bootstrap3 %}
+{% load static %}
 
 {% block content %}
 
-<div class="container">
+
+<div class="overlay"></div>
+<div class="container-fluid header-top">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="background: color #DBDBDB; padding:2px;">
         {% for image_item in image %}
 
-        <!-- displaying News articles -->
-        <div>
-            <h2 class="text-center" style="float:left;"> {{ image_item.image_name }} </h2>
+        <!-- displaying Posts -->
+        <div class="container-fluid">
+            <img src="media/icons/profile_single.png" class="center-block" style="height:40px;margin-top:10px;margin-bottom:10px;">
+            <h2 class="text-center" style="float:left;"> {{ user.username }} </h2>
 
             <br>
 
             <img src="{{ image_item.image.url }}" data-toggle="modal" data-target="#{{image_item.id}}" alt="Image" width="100%">
+
+            
+            
+            <div class='comment-section'>
+                <input type='text' id='cmnt' placeholder='Add a comment...'>
+                <span class='dot02'></span>
+            </div>
             <hr>
+            <br>
         </div>
 
         
@@ -37,9 +49,10 @@
                     <img src="{{ image_item.image.url }}" alt="Image" width="100%">
                     <hr>
                     
-                    <p>{{ image_item.likes }}</p>
+                    
+                    <!-- <p>{{ image_item.likes }}</p> -->
                     <p>{{ image_item.image_caption }}</p>
-                    <p>{% autoescape on %} {{ image_item.comments }} {% endautoescape %}</p>
+                    <!-- <p>{% autoescape on %} {{ image_item.comments }} {% endautoescape %}</p> -->
                     <p>{{ image_item.pub_date }}</p>
                 </div>
                 <div class="modal-footer">
@@ -58,5 +71,22 @@
 
     </div>
 </div>
+
+<footer>
+    <div class="footer-cont">
+    <ul>
+        <li><a href='#'>About us</a></li>
+        <li><a href='#'>Support</a></li>
+        <li><a href='#'>Blog</a></li>
+        <li><a href='#'>Press</a></li>
+        <li><a href='#'>Jobs</a></li>
+        <li><a href='#'>Privacy</a></li>
+        <li><a href='#'>Terms</a></li>
+        <li><a href='#'>Directory</a></li>
+        <li><a href='#' onclick='return false;'>Language</a></li>
+    </ul>
+    <span class='copyright'>© 2018 INSTAGRAM-CLONE</span>
+    </div>
+</footer>
 
 {% endblock %}
