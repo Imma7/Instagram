@@ -5,22 +5,28 @@
 {% block content %}
 
 
-<div class="overlay"></div>
+
 <div class="container-fluid header-top">
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="background: color #DBDBDB; padding:2px;">
+        <div class="col-md-4">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id='center'><input id="input-field" type="text" placeholder='Search' style="text-align: center"></div>
+        </div>
+        <div class="col-md-4">
         {% for image_item in image %}
 
         <!-- displaying Posts -->
         <div class="container-fluid">
-            
-            <br>
-            <br>
-            <br>
+            <section>
             <div class= 'insta fade-scroll'>
             <div class='top-insta'>
-                <a href='https://goo.gl/Y9YWLo' target='_blank'><img src='media/icons/profile_single.png'></a>
+                <a href='{% url 'profile' user_id=user.id %}' target='_blank'><img src='media/icons/profile_single.png'></a>
                 <a href='{{ user.username }}' target='_blank' class='user'>{{ user.username }}</a>
                 <span class= 'dot'></span>
             </div>
@@ -49,7 +55,8 @@
             </div>
             </div> <!-- end Footer -->
             </div> <!-- end Instagram -->
-            <hr>
+            </section> <!-- end section -->
+            
             
         </div>
 
@@ -89,7 +96,38 @@
 
         {% endfor %}
         </div>
-        <div class="col-md-2"></div>
+
+        <div class="col-md-4">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <ul style="list-style-type:none;">
+                <div class='top-insta'>
+                    <a href='{% url 'profile' user_id=user.id %}' target='_blank'><img src='media/icons/profile_single.png'></a>
+                    <a href='{{ user.username }}' target='_blank' class='user'>{{ user.username }}</a>
+                    <span class= 'dot'></span>
+                </div>
+                <li><a href="{% url 'profile' user_id=user.id %}">Profile</a> | <a href="{%url 'new-post' %}">Create Post</a> | <a href="/accounts/password/change">Change Password</a> | <a href="/logout">Logout</a></li>
+            </ul>
+            
+            <br>
+            <!-- <ul class="nav navbar-nav" style="list-style-type:none;">
+                
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ user.username }}
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                  </ul>
+                </li>
+            </ul> -->
+        </div>
 
     </div>
 </div>
@@ -97,15 +135,14 @@
 <footer>
     <div class="footer-cont">
     <ul>
-        <li><a href='#'>About us</a></li>
-        <li><a href='#'>Support</a></li>
-        <li><a href='#'>Blog</a></li>
-        <li><a href='#'>Press</a></li>
-        <li><a href='#'>Jobs</a></li>
-        <li><a href='#'>Privacy</a></li>
-        <li><a href='#'>Terms</a></li>
-        <li><a href='#'>Directory</a></li>
-        <li><a href='#' onclick='return false;'>Language</a></li>
+        <li><a href='https://www.instagram.com/about/us/'>ABOUT US</a></li>
+        <li><a href='https://help.instagram.com/'>SUPPORT</a></li>
+        <li><a href='https://www.tumblr.com/login_required/instagram#_=_'>BLOG</a></li>
+        <li><a href='https://instagram-press.com/'>PRESS</a></li>
+        <li><a href='https://www.instagram.com/about/jobs/'>JOBS</a></li>
+        <li><a href='https://help.instagram.com/285881641526716?helpref=page_content'>PRIVACY</a></li>
+        <li><a href='instragram.com/legal/terms/'>TERMS</a></li>
+        <li><a href='#' onclick='return false;'>LANGUAGE</a></li>
     </ul>
     <span class='copyright'>© 2018 INSTAGRAM-CLONE</span>
     </div>
