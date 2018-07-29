@@ -26,9 +26,9 @@
             <section>
             <div class= 'insta fade-scroll'>
             <div class='top-insta'>
-                <a href='{% url 'profile' user_id=user.id %}' target='_blank'><img src='media/icons/profile_single.png'></a>
-                <a href='{{ user.username }}' target='_blank' class='user'>{{ user.username }}</a>
-                <span class= 'dot'></span>
+                    <a href='{% url 'profile' user_id=user.id %}' target='_blank'><img src='media/icons/profile_single.png'></a>
+                    <a href='{% url 'profile' user_id=user.id %}' target='_blank' class='user'>{{ user.username }}</a>
+                    <span class= 'dot'></span>
             </div>
 
             <div class='post'>
@@ -75,7 +75,8 @@
                 <div class="modal-body">
                     <h3>{{ image_item.profile }}</h3>
                     <hr>
-                    <img src="{{ image_item.image.url }}" alt="Image" width="100%">
+                    <img src="{{ image_item.image.url }}" alt="Image" width="100%" data-toggle="modal" data-target="#myModal">
+                    <img src="{{ image_item.image.url }}" data-toggle="modal" data-target="#{{image_item.id}}" alt="Image" width="100%">
                     <hr>
                     
                     
@@ -108,7 +109,7 @@
             <ul style="list-style-type:none;">
                 <div class='top-insta'>
                     <a href='{% url 'profile' user_id=user.id %}' target='_blank'><img src='media/icons/profile_single.png'></a>
-                    <a href='{{ user.username }}' target='_blank' class='user'>{{ user.username }}</a>
+                    <a href='{% url 'profile' user_id=user.id %}' target='_blank' class='user'>{{ user.username }}</a>
                     <span class= 'dot'></span>
                 </div>
                 <li><a href="{% url 'profile' user_id=user.id %}">Profile</a> | <a href="{%url 'new-post' %}">Create Post</a> | <a href="/accounts/password/change">Change Password</a> | <a href="/logout">Logout</a></li>
