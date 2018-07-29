@@ -14,13 +14,25 @@
 
         <!-- displaying Posts -->
         <div class="container-fluid">
-            <img src="media/icons/profile_single.png" class="center-block" style="height:40px;margin-top:10px;margin-bottom:10px;">
-            <h2 class="text-center" style="float:left;"> {{ user.username }} </h2>
-
+            
             <br>
+            <br>
+            <br>
+            <div class= 'insta fade-scroll'>
+            <div class='top-insta'>
+                <a href='https://goo.gl/Y9YWLo' target='_blank'><img src='media/icons/profile_single.png'></a>
+                <a href='{{ user.username }}' target='_blank' class='user'>{{ user.username }}</a>
+                <span class= 'dot'></span>
+            </div>
 
-            <img src="{{ image_item.image.url }}" data-toggle="modal" data-target="#{{image_item.id}}" alt="Image" width="100%">
-
+            <div class='post'>
+                <div class="overlay">
+                <span></span>
+                </div>
+                <img src="{{ image_item.image.url }}" data-toggle="modal" data-target="#{{image_item.id}}" alt="Image" width="100%">
+            </div>
+            
+            <div class='footer'>
             <div class='react'>
                 <a href='#' role='button'><span class='love'></span></a>
                 <a href='#' role='button'><span class='comment'></span></a>
@@ -35,8 +47,10 @@
                 <input type='text' id='cmnt' placeholder='Add a comment...'>
                 <span class='dot02'></span>
             </div>
+            </div> <!-- end Footer -->
+            </div> <!-- end Instagram -->
             <hr>
-            <br>
+            
         </div>
 
         
