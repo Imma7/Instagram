@@ -8,7 +8,10 @@ urlpatterns = [
     url('^$', views.index, name = 'index'),
     url(r'^new/post$', views.new_post, name='new-post'),
     url(r'^my-profile/(?P<user_id>\d+)' , views.profile, name = 'profile'),
-    url(r'images_profile/(?P<id>\d+)', views.images_profile, name='images_for_profile')
+    url(r'images_profile/(?P<id>\d+)', views.images_profile, name='images_for_profile'),
+    url(r'^signup/$', views.signup, name='signup'),
+    url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        views.activate, name='activate'),
 ]
 
 if settings.DEBUG:
