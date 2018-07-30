@@ -1,3 +1,5 @@
+
+
 {% load bootstrap3 %} {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -10,11 +12,11 @@
   {{form.media}}
 
 {% block styles %} {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/gram.css' %}"> {% endblock %}
 
 </head>
 
-<body>
+<body style="padding:20px;">
 
   <form  action="{%url 'new-post'%}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
