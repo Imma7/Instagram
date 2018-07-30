@@ -147,3 +147,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = '1018.laflare@gmail.com'
 EMAIL_HOST_PASSWORD = 'Laflare1020'
 EMAIL_PORT = 587
+
+# Configure Django App for Heroku.
+django_heroku.settings(locals())
