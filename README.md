@@ -27,7 +27,7 @@ This project was created on a linux platform but should work on other unix based
 
 ### Cloning the repository
 ```bash
-git clone https://github.com/Imma/instagram.git && cd instagram
+git clone https://github.com/Imma7/Instagram.git && cd Instagram
 ```
 
 ### Creating a virtual environment
@@ -90,7 +90,7 @@ The web app can be accessed from the following link:
 
 ## Contributing
 
-- Git clone [https://github.com/Imma7/insta-clonewars.git](https://github.com/Imma7/insta-clonewars.git) 
+- Git clone [https://github.com/Imma7/Instagram.git](https://github.com/Imma7/Instagram.git) 
 - Make the changes.
 - Write your tests.
 - If everything is OK. push your changes and make a pull request.
