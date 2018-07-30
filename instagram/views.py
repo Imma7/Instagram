@@ -6,6 +6,7 @@ import datetime as dt
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from .forms import NewImageForm
+from friendship.models import Friend, Follow, Block, FriendshipRequest
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -45,5 +46,7 @@ def images_profile(request, id):
     details=Profile.get_by_id(id)
     images=Image.objects.filter(user_id=request.user.id)
     # images = Images.get_profile_images(id)
+    followers = Follow.objects.followers(request.user)
+    following = Follow.objects.following(request.user)
     print(images)
     return render(request, 'profile.html', locals())
