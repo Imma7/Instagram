@@ -14,7 +14,9 @@
     {% block styles %}
     {% bootstrap_css %}
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-    <link rel="stylesheet" href="{% static "css/snap.css" %}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link rel="stylesheet" href="{% static "css/gram.css" %}">
     {% endblock %}
 </head>
 <body>
@@ -26,6 +28,9 @@
 
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
      {% bootstrap_javascript %}
     {% endblock %}
 </body>
