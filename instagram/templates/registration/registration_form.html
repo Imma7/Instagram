@@ -1,5 +1,7 @@
 {%extends "registration/base.html"%} {% load bootstrap3 %}
 {% block content %}
+<div class="col-md-4"></div>
+<div class="col-md-4">
   <h2>Sign up</h2>
   <form method="post">
     {% csrf_token %}
@@ -17,4 +19,10 @@
       {% endfor %}
     <button type="submit">Sign up</button>
   </form>
+
+  <div class="panel-heading">
+    <a href="/accounts/login/" class="btn btn-default"> Log In</a>
+  </div>
+</div>
+<div class="col-md-4"></div>
 {% endblock %}
