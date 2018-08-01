@@ -40,6 +40,11 @@ class Profile(models.Model):
         profile=Profile.objects.filter(user=id)
         return profile
 
+    @classmethod
+    def search_by_username(cls, search_term):
+        profiles = cls.objects.filter(username__icontains=search_term)
+        return profiles
+
     
 
     def __str__(self):
