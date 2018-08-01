@@ -98,3 +98,17 @@ def activate(request, uidb64, token):
         return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
+
+
+def search_profile(request):
+
+    if 'profile' in request.GET and request.GET["profile"]:
+        search_term = request.GET.get("profile")
+        searched_profiles = Profile.search_by_username(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html', {"message":message, "profiles": searched_profiles})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html', {"message":message})
