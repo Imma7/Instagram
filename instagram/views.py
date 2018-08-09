@@ -100,15 +100,12 @@ def activate(request, uidb64, token):
         return HttpResponse('Activation link is invalid!')
 
 
-def search_profile(request):
-
-    if 'profile' in request.GET and request.GET["profile"]:
-        search_term = request.GET.get("profile")
-        searched_profiles = Profile.search_by_username(search_term)
+def search_results(request):
+    if 'user' in request.GET and request.GET["user"]:
+        search_term = request.GET.get("user")
+        searched_profile = Profile.search_by_username(search_term)
         message = f"{search_term}"
-
-        return render(request, 'search.html', {"message":message, "profiles": searched_profiles})
-
+        return render(request, 'search.html', {"message": message, "profile": searched_profile})
     else:
         message = "You haven't searched for any term"
-        return render(request, 'search.html', {"message":message})
+        return render(request, 'search.html', {"message": message})
