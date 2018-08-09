@@ -42,7 +42,7 @@ class Profile(models.Model):
 
     @classmethod
     def search_by_username(cls, search_term):
-        profiles = cls.objects.filter(username__icontains=search_term)
+        profiles = cls.objects.filter(bio__icontains=search_term)
         return profiles
 
     
