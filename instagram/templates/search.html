@@ -1,25 +1,30 @@
-{%extends 'base.html'%} 
+{% extends 'base.html' %}
+
 {% block content %}
-<div class="container">
-
-  <div class="row">
-    {% if profiles%}
-      <h2>Found {{ profiles|length }} of searched term {{message}}</h2>
-    {% else %}
-      <h2> Found 0 people for the search term "{{message}}"</h2>
-    {% endif %}
-
-  </div>
-
-  <div class="row">
-
-  {% if profiles %}
-    {% for profile in profiles %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{profile.username}}</h1>
-      </div>
+{{block.super}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    {% for p in profiles %}
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-4"><hr></div>
+            <div class="col-md-4">
+                <h2 class="text-center"> Found {{ p.bio }} </h2>
+                <p> Found {{ user.username }} </p>
+            </div>
+            <div class="col-md-4"><hr></div>
+        
+        
+        </div>
+    </div>
     {% endfor %}
-  {% endif %}
-  </div>
-</div>
+</body>
+</html>
 {% endblock %}
