@@ -10,178 +10,41 @@
 
 </head>
 <body>
-    <!-- <div id='nav-container'>
-      <div id='navbar'>
-        <div id='left'>
-          <a href='#'><img src='https://5a5a57ff32a328601212-ee0df397c56b146e91fe14be42fa361d.ssl.cf1.rackcdn.com/icon/instagram_logos_glyph/03H5cHNMt-Jni4pe9u+7/glyph-logo_May2016_200.png' id='logo-icon'></a>
-          <a href='#'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png' id='logo-name'></a>
-        </div>
-        <div id='center'><input id="input-field" type="text" placeholder='Search' style="text-align: center"></div>
-        <div id='right'>
-          <a href='#'><img src='http://freeiconbox.com/icon/256/23228.png' class='nav-icon'></a>
-          <a href='#'><img src='http://image.flaticon.com/icons/png/128/126/126471.png' class='nav-icon'></a>
-          <a href='#'><img src='http://www.iconsfind.com/wp-content/uploads/2015/11/20151128_56592ddb44f95-210x210.png' class='nav-icon'></a>
-          <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
-          <span class="caret"></span>
-          </a>
-        </div>
-      </div>
-    </div> -->
-
 <div class="container-fluid">
   <div class="navbar">
-    <a href='#'><i class="fa fa-instagram"></i><span></span></a>
+    <a href='#'><i class="fa fa-instagram"></i><span style="float: left;"></span></a>
+      
+    <!-- Adding a search form  -->
+      <div class="col-md-4 col-sm-4 navbar-left">
+
+            <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+    
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search business" name="hood">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+              </div>
+    
+            </form>
+        </div>
+        <!-- search form end -->
+      
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ user.username }}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'profile' user_id=user.id %}">Profile</a>
+            <a class="dropdown-item" href="{%url 'new-post' %}">Create Post</a>
+            <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
+            <a class="dropdown-item" href="/logout">Log Out</a>
+          </div>
+        </div>
+      
   </div>
-
-<!--  <ul class="nav navbar-nav">
-    <li class="active"><a href="#">Home</a></li>
-    <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
-      <span class="caret"></span></a>
-      <ul class="dropdown-menu">
-        <li><a href="#">Page 1-1</a></li>
-        <li><a href="#">Page 1-2</a></li>
-        <li><a href="#">Page 1-3</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <div class="dropdown" style="padding-top: 8px; float:right; padding-right:65px;">
-      {% if user.is_authenticated %}
-      <ul>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li>
-              <a href="{% url 'profile' user_id=user.id %}">Profile</a>
-            </li>
-            <li>
-                <a href="{%url 'new-post' %}">Create Post</a>
-            </li>
-            <li>
-              <a href="/accounts/password/change">Change Password</a>
-            </li>
-            <li>
-              <a href="/logout">Logout</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      {% else %}
-      <li>
-        <a class='btn btn-default' href="/accounts/login">Login</a>
-      </li>
-  
-      {% endif %}
-    </div> -->
-
- 
 </div> 
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </body>
 </html>
-
-<!-- <div class="navbar">
-    <a href='#'><i class="fa fa-instagram"></i><span></span></a>
-  </div>
-  <div class='lil-bar'>
-    <div class='bar-cont'>
-      <a href='#' role="button"><i class="fa fa-user-plus"></i></a>
-      <a href='#' onclick='return false;' class='list-order' role="button"><i class="fa fa-ellipsis-h"></i></a>
-    </div>
-  </div>
-  <div class="list">
-    <ul style="background-color:red;">
-        <li><a href="https://goo.gl/TChSJ4" target='_blank'><img src="https://goo.gl/aVijkX" class="avatar avatar-50">uncle_oreo</a></li>
-        <li><a href='#'>Log in</a></li>
-        <li><a href='#'>Sign up</a></li>
-        <li><a href='#'>Report this user</a></li>
-        <li class='collapse'><a href='#'>Collapse the bar</a></li>
-    </ul>
-  </div> 
-
-  <div class="dropdown" style="padding-top: 8px; float:right; padding-right:65px;">
-    {% if user.is_authenticated %}
-    <ul>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
-          <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-          <li>
-            <a href="{% url 'profile' user_id=user.id %}">Profile</a>
-          </li>
-          <li>
-              <a href="{%url 'new-post' %}">Create Post</a>
-          </li>
-          <li>
-            <a href="/accounts/password/change">Change Password</a>
-          </li>
-          <li>
-            <a href="/logout">Logout</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    {% else %}
-    <li>
-      <a class='btn btn-default' href="/accounts/login">Login</a>
-    </li>
-
-    {% endif %}
-  </div> -->
-
-<!--  <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header" style="padding-top: 8px; font-size: 18px;">
-          <a class="navbar-brand" href="{% url 'index' %}">INSTAGRAM</a>
-        </div>
-    
-        <div class="dropdown" style="padding-top: 8px; float:right; padding-right:65px;">
-          {% if user.is_authenticated %}
-          <ul>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a href="{% url 'profile' user_id=user.id %}">Profile</a>
-                </li>
-                <li>
-                    <a href="{%url 'new-post' %}">Create Post</a>
-                </li>
-                <li>
-                  <a href="/accounts/password/change">Change Password</a>
-                </li>
-                <li>
-                  <a href="/logout">Logout</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          {% else %}
-          <li>
-            <a class='btn btn-default' href="/accounts/login">Login</a>
-          </li>
-    
-          {% endif %}
-        </div>
-    
-        <div class="container-fluid" style="padding-top: 8px; padding-right:10px; position:inherit;">
-          <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        </div>
-    
-    
-        
-    
-        
-    
-      </div>
-    </nav> -->
