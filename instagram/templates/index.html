@@ -3,20 +3,9 @@
 {% load static %}
 
 {% block content %}
-
-
-
 <div class="container-fluid header-top">
     <div class="row">
         <div class="col-md-4">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div id='center'><input id="input-field" type="text" placeholder='Search' style="text-align: center"></div>
         </div>
         <div class="col-md-4">
         {% for image_item in image %}
@@ -99,36 +88,7 @@
         {% endfor %}
         </div>
 
-        <div class="col-md-4">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            
-            <ul style="list-style-type:none;">
-                <div class='top-insta'>
-                    <a href='{% url 'profile' user_id=user.id %}' target='_blank'><img src='media/icons/profile_single.png'></a>
-                    <a href='{% url 'profile' user_id=user.id %}' target='_blank' class='user'>{{ user.username }}</a>
-                    <span class= 'dot'></span>
-                </div>
-                <li><a href="{% url 'profile' user_id=user.id %}">Profile</a> | <a href="{%url 'new-post' %}">Create Post</a> | <a href="/accounts/password/change">Change Password</a> | <a href="/logout">Logout</a></li>
-            </ul>
-            
-            <br>
-            <!-- <ul class="nav navbar-nav" style="list-style-type:none;">
-                
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ user.username }}
-                  <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Page 1-1</a></li>
-                    <li><a href="#">Page 1-2</a></li>
-                    <li><a href="#">Page 1-3</a></li>
-                  </ul>
-                </li>
-            </ul> -->
+        <div class="col-md-4">  
         </div>
 
     </div>
