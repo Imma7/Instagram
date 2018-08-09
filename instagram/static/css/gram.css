@@ -9,6 +9,10 @@
 
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 
+.modal-backdrop.in{
+    z-index: -1;
+}
+
 body,
 html {
     background: #fafafa;
@@ -185,11 +189,12 @@ section {
     width: 100%;
 }
 .overlay {
-    background: rgba(0, 0, 0, 0.23);
+    background: rgba(0, 0, 0, 0.3);
     position: absolute;
     left: 0;
     top: 0;
     opacity: 0;
+    
     -webkit-transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     -o-transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     transition: all .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
